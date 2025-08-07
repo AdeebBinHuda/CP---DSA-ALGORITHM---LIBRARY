@@ -23,24 +23,26 @@ void solve(){
     int n;
     cin>>n;
 
-     int left=1, right=n,ans;
-     bool parFectSquare= false;
-     while(left<right){
-          int middle=(left+right)/2;
+   int  start = 1, end = n;
+    bool perfectSquare= false;
 
-          if(middle*middle==n){
-              parFectSquare= true;
-               break;
-          }
-          else if(middle*middle>n){
-               right= middle-1;
-          }
-          else{
-               left= middle+1;
-          }
+   while(start <= end){
+     int mid = (start + end)/2;
+
+     if(mid * mid == n){
+          perfectSquare = true;
+          break;
      }
-     if(parFectSquare== true) cout<<"Yes";
-      else cout<<"NO";
+     else if(mid*mid > n){
+          end = mid - 1;
+     }
+     else{
+          start = mid + 1;
+     }
+   }
+   if(perfectSquare == true) cout<<"YES";
+   else cout<<"NO";
+
 }
 int main(){
     cin.tie(nullptr); cout.tie(nullptr);
